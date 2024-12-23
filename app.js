@@ -11,7 +11,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/notes", require("./routes/notes.js"))
 app.use("/auth", require("./routes/auth.js"))
+app.get("/", (req, res) => {
+    res.send("Hello World!")
+})
 
 app.listen(80, () => {
     console.log("Running on port http://localhost:5000")
 })
+
+module.exports = app
